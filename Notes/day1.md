@@ -22,11 +22,37 @@ Time Complexity: O(log(n))
 
 ### [code](../src/main/java/Day1T704BinarySearch.java)
 
-### Summary
+### Attention
 
 1 `mid = (right + left) / 2` 
 
 The while loop should contain the position of "mid".
+
+
+# 27. [Remove Element](https://leetcode.com/problems/remove-element/)
+
+### Solution
+
+We use two pointer to traverse the array - 'slow' and 'fast'.
+The pointer 'slow' keeps track of the current index where
+we can place the next element that is not equal to 'val', and
+'fast' is used to iterate over all elements of the array.
+
+We start with 'slow=0' and 'fast=0'. As we iterate over the
+array with 'fast', we compare the current element nums[fast] 
+with the value 'val'. If the element nums[fast] is equal to
+the 'val', copy it to the nums[slow] and increment 'slow'.
+
+At the end of iteration, all elements are not equal to 'val'
+will have been moved to the leftside of the array, and 'slow'
+will point the next empty position. We return 'slow' as the
+length of the new array with the target element removed.
+
+### [code](../src/main/java/Day1T27RemoveElement.java)
+
+
+
+
 
 
 
