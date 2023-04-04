@@ -29,7 +29,7 @@ Time Complexity: O(log(n))
 The while loop should contain the position of "mid".
 
 
-# 27. [Remove Element](https://leetcode.com/problems/remove-element/)
+# [27. Remove Element](https://leetcode.com/problems/remove-element/)
 
 ### Solution
 
