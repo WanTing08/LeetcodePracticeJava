@@ -149,7 +149,7 @@ Once the 'while' loop terminates, 'prev' will be pointing to the head of the rev
 
 
 
-### [code](../src/main./java/Day3T206ReverseLinkedList.java)
+### [code](../src/main/java/Day3T206ReverseLinkedList.java)
 ```java
 public ListNode reverseList(ListNode head) {
     ListNode prev = null;
