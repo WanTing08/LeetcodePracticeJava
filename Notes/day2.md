@@ -16,6 +16,26 @@ squares of the largest element in the end of the result array.
 
 ### [code](../src/main/java/Day2T977.java)
 
+```java
+public static int[] sortedSquares(int[] nums){
+    int left = 0;
+    int right = nums.length - 1;
+    int k = nums.length - 1;
+    int[] result = new int[nums.length];
+    
+    while(right >= left){
+        if(Math.abs(nums[left]) > Math.abs(nums[right])){
+            result[k--] = nums[left] * nums[left];
+            left++;
+        }else{
+            result[k--] = nums[right] * nums[right];
+            right--;
+        }
+    }
+    return result;
+}
+```
+
 
 # [209. Minimum Size Subarray Sum](https://leetcode.com/problems/minimum-size-subarray-sum/)
 
@@ -31,6 +51,27 @@ the array. At each step, we keep track of the minimum length of a
 subarray that has a sum greater or equal to the target.
 
 ### [code](../src/main/java/Day2T209.java)
+```java
+public int minSubArrayLen(int[] nums, int target){
+    int left = 0;
+    int right = 0;
+    int sum = 0;
+    int minLen = Integer.MAX_VALUE;
+    
+    while(right < nums.length){
+        sum += nums[right];
+        
+        while(sum >= target){
+            minLen = Math.min(minLen, right - left + 1);
+            sum = sum - nums[left];
+            left++;
+        }
+        right++;
+    
+    }
+    return minLen == Integer.MAX_VALUE ? 0 : minLen;
+}
+```
 
 ### Attention
 
