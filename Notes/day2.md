@@ -36,7 +36,7 @@ subarray that has a sum greater or equal to the target.
 
 ### 1.
 
-In Java, Integer.MAX_VALUE is a constant that represents the maximum value that an int variable can hold, which is 2,147,483,647.
+In Java, **Integer.MAX_VALUE** is a constant that represents the maximum value that an int variable can hold, which is 2,147,483,647.
 
 In the context of this problem, we use minLength to keep track of the minimum length of a subarray that has a sum greater than or equal to the target. We initialize minLength to Integer.MAX_VALUE to represent that we haven't found any valid subarrays yet.
 
@@ -49,4 +49,10 @@ This line is executed when the current subarray sum is greater than or equal to 
 # [59. Spiral Matrix II](https://leetcode.com/problems/spiral-matrix-ii/)
 
 ### Solution
+
+The idea to simulate the spiral pattern iterative filling in the 
+matrix in a clockwise direction, while updating the boundaries of
+the rows and columns that need to be traversed next. We use four loops
+(right, down, left, up), updating the starting and ending indices
+accordingly.
 
