@@ -122,9 +122,46 @@ public ListNode addTwo(ListNode l1, ListNode l2){
 # [142. Linked List Cycle II](https://leetcode.com/problems/linked-list-cycle-ii/)
 
 ## Solution
+The idea of the solution is to use two pointers, one slow and one fast, 
+to traverse the linked list. If the fast pointer ever catches up the slow
+pointer, then there must be a cycle in the list.
 
+
+Once we know there is a cycle, we can find the node where the cycle
+starts by setting one pointer to the head of the linked list and another
+node where the fast and slow pointers meet. Then we move both pointers 
+one step at a time until they meet again. The node where they meet is the start
+of the cycle.
+
+If there is no cycle in the list, then we simply return null.
 
 ### [code](../src/main/java/Day4T142LinkedListCycleII.java)
+```java
+public static ListNode detectCycle(ListNode head){
+    if(head == null || head.next == null) return null;
+    ListNode slow = head;
+    ListNode fast = head;
+    boolean hasCycle = false;
+    
+    while(fast.next != null && fast.next.next != null){
+        slow = slow.next;
+        fast = fast.next.next;
+        if(slow == fast){
+            hasCycle = true;
+            break;
+        }
+    }
+    if(!hasCycle) return null;
+    
+    ListNode p1 = head;
+    ListNode p2 = slow;
+    while(p1 != p2){
+        p1 = p1.next;
+        p2 = p2.next;
+    }
+    return p1;
+}
+```
 
 
 
