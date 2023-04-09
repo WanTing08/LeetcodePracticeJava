@@ -1,3 +1,5 @@
+package day1_5;
+
 public class Day1T704BinarySearch {
     public static int search(int[] nums, int target) {
         int left = 0;

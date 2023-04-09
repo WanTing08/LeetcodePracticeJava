@@ -1,3 +1,5 @@
+package day1_5;
+
 class Day3T707MyLinkedList {
     private ListNode head;
     private int size;

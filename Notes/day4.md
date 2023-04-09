@@ -15,12 +15,12 @@ list.
 The code use a temporary variable _'newHead'_ to keep track of
 the new head of the list after the first pair is swapped.
 
-### [code](../src/main/java/Day4T24SwapNodesInPairs.java)
+### [code](../src/main/java/day1_5/Day4T24SwapNodesInPairs.java)
 
 ```java
-public ListNode swapNodes(ListNode head){
+public datastructure.ListNode swapNodes(datastructure.ListNode head){
     if(head == null || head.next == null) return head;
-    ListNode newHead = head.next;
+    datastructure.ListNode newHead = head.next;
     head.next = swapNodes(newHead.next);
     newHead.next = head;
     return newHead;
@@ -42,14 +42,14 @@ We use a **dummy node** to handle the edge case where the first node needs to be
 
 Overall, the time complexity of this solution is _**O(n)**_, where n is the length of the linked list.
 
-### [code](../src/main/java/Day4T19RemoveNthNodeFromEndOfList.java)
+### [code](../src/main/java/day1_5/Day4T19RemoveNthNodeFromEndOfList.java)
 
 ```java
-public static ListNode removeNode(ListNode head, int n){
-    ListNode dummy = new ListNode(0);
+public static datastructure.ListNode removeNode(datastructure.ListNode head, int n){
+    datastructure.ListNode dummy = new datastructure.ListNode(0);
     dummy.next = head;
-    ListNode fast = dummy;
-    ListNode slow = dummy;
+    datastructure.ListNode fast = dummy;
+    datastructure.ListNode slow = dummy;
     
     for(int i = 1; i <= n + 1; i++){
         fast = fast.next;
@@ -83,11 +83,11 @@ linked lists.
 If there is a carry digit in the end of addition, we create new node
 for it and append it to the result linked list.
 
-### [code](../src/main/java/Day4T2AddTwoNumbers.java)
+### [code](../src/main/java/day1_5/Day4T2AddTwoNumbers.java)
 ```java
-public ListNode addTwo(ListNode l1, ListNode l2){
-    ListNode dummy = new ListNode(0);
-    ListNode current = dummy;
+public datastructure.ListNode addTwo(datastructure.ListNode l1, datastructure.ListNode l2){
+    datastructure.ListNode dummy = new datastructure.ListNode(0);
+    datastructure.ListNode current = dummy;
     int carry = 0;
 
     while(l1 != null || l2 != null){
@@ -96,14 +96,14 @@ public ListNode addTwo(ListNode l1, ListNode l2){
         
         int sum = x + y + carry;
         carry = sum / 10;
-        current.next = new ListNode(sum % 10);
+        current.next = new datastructure.ListNode(sum % 10);
         current = current.next;
         
         if(l1 != null) l1 = l1.next;
         if(l2 != null) l2 = l2.next;
     }
     if(carry > 0){
-        current.next = new ListNode(carry);
+        current.next = new datastructure.ListNode(carry);
     }
     return dummy.next;
 }
@@ -116,7 +116,7 @@ public ListNode addTwo(ListNode l1, ListNode l2){
 ## Solution
 
 
-### [code](../src/main/java/Day4T7ReverseInteger.java)
+### [code](../src/main/java/day1_5/Day4T7ReverseInteger.java)
 
 
 # [142. Linked List Cycle II](https://leetcode.com/problems/linked-list-cycle-ii/)
@@ -135,12 +135,12 @@ of the cycle.
 
 If there is no cycle in the list, then we simply return null.
 
-### [code](../src/main/java/Day4T142LinkedListCycleII.java)
+### [code](../src/main/java/day1_5/Day4T142LinkedListCycleII.java)
 ```java
-public static ListNode detectCycle(ListNode head){
+public static datastructure.ListNode detectCycle(datastructure.ListNode head){
     if(head == null || head.next == null) return null;
-    ListNode slow = head;
-    ListNode fast = head;
+    datastructure.ListNode slow = head;
+    datastructure.ListNode fast = head;
     boolean hasCycle = false;
     
     while(fast.next != null && fast.next.next != null){
@@ -153,8 +153,8 @@ public static ListNode detectCycle(ListNode head){
     }
     if(!hasCycle) return null;
     
-    ListNode p1 = head;
-    ListNode p2 = slow;
+    datastructure.ListNode p1 = head;
+    datastructure.ListNode p2 = slow;
     while(p1 != p2){
         p1 = p1.next;
         p2 = p2.next;

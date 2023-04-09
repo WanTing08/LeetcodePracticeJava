@@ -1,3 +1,5 @@
+package day1_5;
+
 public class Day1T27RemoveElement {
     public static int removeElement(int[] nums, int val){
         int slow = 0;

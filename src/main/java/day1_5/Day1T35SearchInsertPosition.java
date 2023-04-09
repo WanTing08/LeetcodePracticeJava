@@ -1,3 +1,5 @@
+package day1_5;
+
 import java.util.Arrays;
 
 public class Day1T35SearchInsertPosition {

@@ -1,3 +1,7 @@
+package day1_5;
+
+import datastructure.ListNode;
+
 /**
  * Given the head of a singly linked list, reverse the list, and return the reversed list.
  *
