@@ -18,5 +18,22 @@ package day6_10;
     Output: true
  */
 public class Day7T383RansomNote {
+    public static boolean ransomNote(String ransom, String magazine){
+        int[] record = new int[26];
+        for(char c : magazine.toCharArray()){
+            record[c - 'a']++;
+        }
+        for(char c : ransom.toCharArray()){
+            if(record[c - 'a'] == 0) return false;
+            record[c - 'a']--;
+        }
+        return true;
+    }
 
+    public static void main(String[] args) {
+        String ransom = "aa";
+        String magazine = "a";
+        boolean res = ransomNote(ransom, magazine);
+        System.out.println(res);
+    }
 }

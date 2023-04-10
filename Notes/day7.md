@@ -45,3 +45,26 @@ public int fourSum(int[] nums1, int[] nums2, int[] nums3, int[] nums4){
 # [383. Ransom Note](https://leetcode.com/problems/ransom-note/)
 
 ## Solution
+
+The idea behind the solution is to first count the frequency of each character
+of the magazine string, and then check if there are enough character to 
+construct the ransom note. 
+
+### [code](../src/main/java/day6_10/Day7T383RansomNote.java)
+```java
+public static boolean ransomNote(String ransom, String magazine){
+    int[] record = new int[26]; //count each character in magazine
+    
+    for(char c : magazine.toCharArray()){
+        record[c - 'a']++; //Increment the count of each encountered character
+    }
+    
+    for(char c : ransom.toCharArray()){
+        if(record[c - 'a'] == 0) return false; //Not enough character in magazine
+        record[c - 'a']--; //Decrement count of used character
+    }
+    
+    return true;
+}
+```
+
