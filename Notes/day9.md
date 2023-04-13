@@ -29,5 +29,36 @@ public int findIndex(String haystack, String needle){
 # [459. Repeated Substring Pattern](https://leetcode.com/problems/repeated-substring-pattern/)
 
 ## Solution
+The approach is based on the observation that if the string 's' can be 
+formed by repeating a smaller substring 'sub', then 's' must contain 'sub'
+twice, once and the beginning once at the end. 
 
+So we can start by checking if the string 's' contains any repeated substring.
+We can do this by checking if 's' equals to 'sub' concatenated with itself
+'n' times, where 'n' is the length of 's' divided by the length of 'sub'.
+If 's' can be fromed by repeating 'sub', then this condition must be true.
+
+### [code](../src/main/java/day6_10/Day9T459RepeatedSubstringPattern.java)
+
+```java
+public boolean isRepeated(String s){
+    int n = s.length();
+    
+    for(int i = n / 2; i >= 0; i--){
+        
+        if(n % i == 0){
+            int m = n / i;
+            String sub = s.substring(0, i);
+            StringBuilder sb = new StringBuilder();
+            
+            for(int j = 0; j < m; j++){
+                sb.append(sub);
+            }
+            
+            if(sb.toString().equals(s)) return true;
+        }
+    }
+    return false;
+}
+```
 
