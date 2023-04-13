@@ -66,7 +66,28 @@ i += 2 * k: This increments i by 2k after each iteration of the loop. This means
 
 ## Solution
 
+We first trim the input string to remove any leading or trailing whitespaces.
 
+Then we split the string into individual words using the split method with the regular expression \\s+, which matches one or more whitespaces.
+
+We then loop through the words in reverse order, appending each word to a StringBuilder along with a space character (except for the last word).
+
+Finally, we return the reversed string by calling the toString method on the StringBuilder.
 
 ### [code](../src/main/java/day6_10/Day8T151ReverseWordsInAString.java)
-
+```java
+public String reverseWords(String s){
+    
+    s = s.trim(); // Remove leading and trailing whitespaces
+    String[] words = s.split("\\s+"); // Split the string into individual words
+    StringBuilder sb = new StringBuilder();
+    
+    for (int i = words.length; i >= 0; i--) {
+        sb.append(words[i]);
+        if(i != 0){
+            sb.append(" ");
+        }
+    }
+    return sb.toString();
+}
+```
