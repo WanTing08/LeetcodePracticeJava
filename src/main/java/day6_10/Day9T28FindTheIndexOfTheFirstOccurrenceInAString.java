@@ -10,8 +10,27 @@ package day6_10;
     The first occurrence is at index 0, so we return 0.
  */
 public class Day9T28FindTheIndexOfTheFirstOccurrenceInAString {
-    public int findIndex(String haystack, String needle){
+    public static int findIndex(String haystack, String needle){
         if(needle.isEmpty()) return 0;
 
+        int hlen = haystack.length();
+        int nlen = needle.length();
+
+        if(nlen > hlen) return -1;
+
+        for (int i = 0; i <= hlen - nlen; i++) {
+            if(haystack.substring(i, i + nlen).equals(needle)){
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    public static void main(String[] args) {
+        String haystack = "a";
+        String needle = "a";
+
+        int res = findIndex(haystack, needle);
+        System.out.println(res);
     }
 }
