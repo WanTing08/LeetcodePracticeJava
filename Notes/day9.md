@@ -26,3 +26,8 @@ public int findIndex(String haystack, String needle){
 }
 ```
 
+# [459. Repeated Substring Pattern](https://leetcode.com/problems/repeated-substring-pattern/)
+
+## Solution
+
+
