@@ -29,4 +29,38 @@ public boolean isValid(String s){
 }
 ```
 
-# [1047. Remove All Adjacent Duplicates In String]
+# [1047. Remove All Adjacent Duplicates In String](https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string/)
+
+## Solution
+We use a stack to store characters from the input string 's', we iterate 
+through the character in 's', and for each character:
+- If the stack is not empty and the top character in the stack is equal
+to the current character, we pop the top character from the stack.
+- Otherwise, we push the current character onto the stack.
+
+After iterating through all characters in 's', we construct a new string
+by appending each character in the stack to a 'StringBuilder', and return
+the resulting string.
+
+Time Complexity: _**O(n)**_
+
+```java
+public String removeAdjacent(String s){
+    
+    Stack<Character> stack = new Stack<>();
+    
+    for(char c : s.toCharArray()){
+        if(!stack.isEmpty() && stack.peek() == c){
+            stack.pop();
+        }else stack.push(c);
+    }
+    
+    StringBuilder sb = new StringBuilder();
+    for(char c : stack){
+        sb.append(c);
+    }
+    
+    return sb.toString();
+}
+```
+
