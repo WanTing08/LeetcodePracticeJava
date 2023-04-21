@@ -13,4 +13,19 @@ public int maxDepth(TreeNode root){
 }
 ```
 
-# []
+# [111. Minimum Depth of Binary Tree](https://leetcode.com/problems/minimum-depth-of-binary-tree/)
+
+## Solution
+The solution uses recursive way. The base case is when 'root' is 'null',
+in which case the depth is 0. The next base case is when 'root' has no
+children, in which case the depth is 1.
+
+If **'root'** has children, we recursively compute the minimum depth of the
+left and right subtrees. If **'root'** has a left child, we call **'minDepth'** on
+it; otherwise, we set **'leftDepth'** to **'Integer.MAX_VALUE'** to ensure that it
+is not chosen as the minimum. Similarly, if **'root'** has a right child, 
+we call **'minDepth'** on it; otherwise, we set **'rightDepth'** to 
+**'Integer.MAX_VALUE'**. The minimum depth of the tree rooted at **'root'** is 
+then 1 plus the minimum of **'leftDepth'** and **'rightDepth'**.
+
+
