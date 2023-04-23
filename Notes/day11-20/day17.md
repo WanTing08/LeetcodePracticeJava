@@ -76,3 +76,34 @@ private static void dfs(TreeNode node, String path, List<String> result){
 }    
 ```
 
+# [404. Sum of Left Leaves](https://leetcode.com/problems/sum-of-left-leaves/)
+
+## Solution
+The solution uses recursion to traverse the binary and find its all
+left leaves. The base case of the recursion is when the current node
+is null, in which case the function returns 0.
+
+For each non-null node, the function checks if its left child is a leaf
+node. If so, it adds the value of the left child to the sum.
+
+The function then recursively calculates the sum of the left leaves in 
+the left and right subtrees of the current node, add them to the sum.
+
+### [code](../../src/main/java/day16_20/Day17T404SumOfLeftLeaves.java)
+
+```java
+public int sumOfLeftLeaves(TreeNode root){
+    if(root == null) return 0;
+    
+    int sum = 0;
+    
+    if(root.left != null && root.left.left == null && root.left.right == null){
+        sum += root.left.val;
+    }
+    
+    sum += sumOfLeftLeaves(root.left) + sumOfLeftLeaves(root.right);
+    
+    return sum;
+}
+```
+
