@@ -28,6 +28,7 @@ we call **'minDepth'** on it; otherwise, we set **'rightDepth'** to
 **'Integer.MAX_VALUE'**. The minimum depth of the tree rooted at **'root'** is 
 then 1 plus the minimum of **'leftDepth'** and **'rightDepth'**.
 
+### [code](../src/main/java/day16_20/Day16T111MinimumDepthOfBinaryTree.java)
 ```java
 public static int minDepth(TreeNode root){
     if(root == null) return 0;
@@ -40,5 +41,22 @@ public static int minDepth(TreeNode root){
         return leftDepth + 1;
     }
     return Math.min(leftDepth, rightDepth) + 1;
+}
+```
+
+# [222. Count Complete Tree Nodes](https://leetcode.com/problems/count-complete-tree-nodes/description/)
+
+## Solution
+
+This solution is based on the observation that the total number of nodes in a binary tree is equal to the number of nodes in its left subtree plus the number of nodes in its right subtree plus one (for the root node). We recursively count the nodes in the left and right subtrees, and add them together along with one to get the total number of nodes in the tree.
+
+This solution doesn't take advantage of the fact that the tree is a complete binary tree, so it may be slower for large trees.
+
+### [code](../src/main/java/day16_20/Day16T222CountCompleteTreeNodes.java)
+
+```java
+public static int countNum(TreeNode root){
+    if(root == null) return 0;
+    return countNum(root.left) + countNum(root.right) + 1;
 }
 ```
