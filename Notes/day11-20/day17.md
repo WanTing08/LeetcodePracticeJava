@@ -37,3 +37,42 @@ private static int getHeight(TreeNode node){
 # [257. Binary Tree Paths](https://leetcode.com/problems/binary-tree-paths/)
 
 ## Solution
+The solution uses depth-first search(DFS) to traverse the binary tree 
+and find all the paths from the root node to left nodes. 
+
+The **'binaryTreePaths'** method initializes the list of paths and check if
+the root node is null. If the root is null, the method return the empty list
+of paths. Otherwise, it calls the **'dfs'** method to traverse the binary tree.
+
+The **'dfs'** method is a recursion way that takes the current node, 
+the path from root node to the current node, and the list of paths as 
+parameters. If current node is a leaf node, the method append the current
+node value to the path and add it to the list of paths. 
+
+If the current node has a left or right child, the method recursively calls itself with the child node, the updated path,
+and the list of paths. The path is updated by appending the current node value and "->" to indicate the path to the child node.
+
+Finally, the **'binaryTreePaths'** method returns the list of paths.
+
+```java
+public static List<String> binaryTreePaths(TreeNode root){
+    List<String> result = new ArrayList<>();
+    if(root == null) return result;
+    dfs(root, "", result);
+    return result;
+    }
+    
+private static void dfs(TreeNode node, String path, List<String> result){
+    if(node.left==null||node.right==null){
+        result.add(path+node.val);
+        return;
+    }
+    if(node.left!=null){
+        dfs(node.left,path+node.val+"->",result);
+    }
+    if(node.right!=null){
+        dfs(node.right,path+node.val+"->",result);
+    }
+}    
+```
+
