@@ -28,4 +28,17 @@ we call **'minDepth'** on it; otherwise, we set **'rightDepth'** to
 **'Integer.MAX_VALUE'**. The minimum depth of the tree rooted at **'root'** is 
 then 1 plus the minimum of **'leftDepth'** and **'rightDepth'**.
 
-
+```java
+public static int minDepth(TreeNode root){
+    if(root == null) return 0;
+    int leftDepth = minDepth(root.left);
+    int rightDepth = minDepth(root.right);
+    if(root.left == null){
+        return rightDepth + 1;
+    }
+    if(root.right == null){
+        return leftDepth + 1;
+    }
+    return Math.min(leftDepth, rightDepth) + 1;
+}
+```
