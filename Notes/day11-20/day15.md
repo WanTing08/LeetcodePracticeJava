@@ -7,7 +7,7 @@ it calls the 'invert' method recursively on the left and right subtree,
 and then swap the left and right subtrees of the current node before returning
 the root node.
 
-### [code](../src/main/java/day11_15/Day15T226InvertBinaryTree.java)
+### [code](../../src/main/java/day11_15/Day15T226InvertBinaryTree.java)
 ```java
 public TreeNode invert(TreeNode root){
     if(root == null) return null;
@@ -26,7 +26,7 @@ To solve this problem, we can use a recursive approach. We first check if the ro
 If not, we call a helper function that checks if the left and right subtrees
 are mirror image of each other. To check if two trees are mirror images of each other, we compare their values and recursively compare the left subtree of one with the right subtree of the other, and vice versa. If all these comparisons return true, then we can say that the binary tree is symmetric.
 
-### [code](../src/main/java/day11_15/Day15T101SymmetricTree.java)
+### [code](../../src/main/java/day11_15/Day15T101SymmetricTree.java)
 ```java
 public static boolean isSymmetric(TreeNode root){
     if(root == null) return true;

@@ -10,7 +10,7 @@ Then we use 'curr' pointer to traverse the remaining list, removing
 any elements with value 'val'. The time complexity of this solution is **O(n)**, 
 where n is the number of nodes in the linked list.
 
-### [code](../src/main/java/day1_5/Day3T203RemoveLinkedListElements.java)
+### [code](../../src/main/java/day1_5/Day3T203RemoveLinkedListElements.java)
 
 ```java
 public class day1_5.Day3T203RemoveLinkedListElements {
@@ -34,7 +34,7 @@ public class day1_5.Day3T203RemoveLinkedListElements {
 
 # [707. Design Linked List](https://leetcode.com/problems/design-linked-list/)
 
-### [code](../src/main/java/day1_5/Day3T707MyLinkedList.java)
+### [code](../../src/main/java/day1_5/Day3T707MyLinkedList.java)
 
 ```java
 class day1_5.Day3T707MyLinkedList {
@@ -149,7 +149,7 @@ Once the 'while' loop terminates, 'prev' will be pointing to the head of the rev
 
 
 
-### [code](../src/main/java/day1_5/Day3T206ReverseLinkedList.java)
+### [code](../../src/main/java/day1_5/Day3T206ReverseLinkedList.java)
 ```java
 public datastructure.ListNode reverseList(datastructure.ListNode head) {
     datastructure.ListNode prev = null;

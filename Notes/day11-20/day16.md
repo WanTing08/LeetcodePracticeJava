@@ -3,7 +3,7 @@
 The solution is to use recursion to repeatedly compare the length of 
 the left subtree and right subtree.
 
-### [code](../src/main/java/day16_20/Day16T104MaximumDepthOfBinaryTree.java)
+### [code](../../src/main/java/day16_20/Day16T104MaximumDepthOfBinaryTree.java)
 ```java
 public int maxDepth(TreeNode root){
     if(root == null) return 0;
@@ -28,7 +28,7 @@ we call **'minDepth'** on it; otherwise, we set **'rightDepth'** to
 **'Integer.MAX_VALUE'**. The minimum depth of the tree rooted at **'root'** is 
 then 1 plus the minimum of **'leftDepth'** and **'rightDepth'**.
 
-### [code](../src/main/java/day16_20/Day16T111MinimumDepthOfBinaryTree.java)
+### [code](../../src/main/java/day16_20/Day16T111MinimumDepthOfBinaryTree.java)
 ```java
 public static int minDepth(TreeNode root){
     if(root == null) return 0;
@@ -52,7 +52,7 @@ This solution is based on the observation that the total number of nodes in a bi
 
 This solution doesn't take advantage of the fact that the tree is a complete binary tree, so it may be slower for large trees.
 
-### [code](../src/main/java/day16_20/Day16T222CountCompleteTreeNodes.java)
+### [code](../../src/main/java/day16_20/Day16T222CountCompleteTreeNodes.java)
 
 ```java
 public static int countNum(TreeNode root){

@@ -7,7 +7,7 @@ the third and fourth arrays and look for the corresponding negative sum
 in the hash map. If it exists, we add its count to the total number of
 valid quadruplets.
 
-### [code](../src/main/java/day6_10/Day7T454_4SumII.java)
+### [code](../../src/main/java/day6_10/Day7T454_4SumII.java)
 
 ```java
 public int fourSum(int[] nums1, int[] nums2, int[] nums3, int[] nums4){
@@ -50,7 +50,7 @@ The idea behind the solution is to first count the frequency of each character
 of the magazine string, and then check if there are enough character to 
 construct the ransom note. 
 
-### [code](../src/main/java/day6_10/Day7T383RansomNote.java)
+### [code](../../src/main/java/day6_10/Day7T383RansomNote.java)
 ```java
 public static boolean ransomNote(String ransom, String magazine){
     int[] record = new int[26]; //count each character in magazine

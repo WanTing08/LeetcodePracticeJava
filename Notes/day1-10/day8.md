@@ -6,7 +6,7 @@ Two pointers approach: one pointer starts at the beginning of the array
 of the 'while' loop, it swaps the character at the 'left' and 'right' pointers and
 moves the pointers closer together. The loop continues until the left pointer meets or passes the right pointer, at which point the reversal is complete.
 
-### [code](../src/main/java/day6_10/Day8T344ReverseString.java)
+### [code](../../src/main/java/day6_10/Day8T344ReverseString.java)
 ```java
 public void reverse(char[] s){
     int left = 0;
@@ -33,7 +33,7 @@ then swaps the characters at these indices using two pointers approach.
 
 Finally, the reversed character array is converted back into a string and returned as the solution.
 
-### [code](../src/main/java/day6_10/Day8T541ReverseStringII.java)
+### [code](../../src/main/java/day6_10/Day8T541ReverseStringII.java)
 
 ```java
 public String reverseII(String s, int k){
@@ -74,7 +74,7 @@ We then loop through the words in reverse order, appending each word to a String
 
 Finally, we return the reversed string by calling the toString method on the StringBuilder.
 
-### [code](../src/main/java/day6_10/Day8T151ReverseWordsInAString.java)
+### [code](../../src/main/java/day6_10/Day8T151ReverseWordsInAString.java)
 ```java
 public String reverseWords(String s){
     

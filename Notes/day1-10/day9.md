@@ -7,7 +7,7 @@ the haystack, and check if the substring of the haystack starting at
 that position with the same length as the needle matches the needle.
 If a match is found, the starting position is returned. If no match is found, -1 is returned. The function also includes some special cases, such as when the needle is empty or when the haystack is shorter than the needle.
 
-### [code](../src/main/java/day6_10/Day9T28FindTheIndexOfTheFirstOccurrenceInAString.java)
+### [code](../../src/main/java/day6_10/Day9T28FindTheIndexOfTheFirstOccurrenceInAString.java)
 
 ```java
 public int findIndex(String haystack, String needle){
@@ -38,7 +38,7 @@ We can do this by checking if 's' equals to 'sub' concatenated with itself
 'n' times, where 'n' is the length of 's' divided by the length of 'sub'.
 If 's' can be fromed by repeating 'sub', then this condition must be true.
 
-### [code](../src/main/java/day6_10/Day9T459RepeatedSubstringPattern.java)
+### [code](../../src/main/java/day6_10/Day9T459RepeatedSubstringPattern.java)
 
 ```java
 public boolean isRepeated(String s){

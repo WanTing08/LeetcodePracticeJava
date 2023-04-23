@@ -6,7 +6,7 @@ each character in the first string, and then subtracting the frequency
 of each character in the second string. If the resulting frequency 
 is zero, then the two string are anagram.
 
-### [code](../src/main/java/day6_10/Day6T242ValidAnagram.java)
+### [code](../../src/main/java/day6_10/Day6T242ValidAnagram.java)
 ```java
 public boolean validAnagram(String s, String t){
     if(s.length() != t.length()) return false;
@@ -42,7 +42,7 @@ it is, add it on _'set2'_;
 
 Finally, convert the _'set2'_ to an array and return it.
 
-### [code](../src/main/java/day6_10/Day6T349IntersectionOfTwoArrays.java)
+### [code](../../src/main/java/day6_10/Day6T349IntersectionOfTwoArrays.java)
 ```java
 public int[] intersection(int[] nums1, int[] nums2){
     Set<Integer> set1 = new HashSet<>();
@@ -99,7 +99,7 @@ If the sum is 1, the number is happy and return true. Otherwise, we add
 the sum to the HashSet and continue the process.
 
 
-### [code](../src/main/java/day6_10/Day6T202HappyNumber.java)
+### [code](../../src/main/java/day6_10/Day6T202HappyNumber.java)
 ```java
 public boolean isHappy(int n){
     Set<Integer> set = new HashSet<>();
@@ -126,7 +126,7 @@ public boolean isHappy(int n){
 The idea is to use a HashMap to store the values and their indices.
 We loop through the array and check if the complement of each element is in the HashMap. If it is, we return the indices of the two elements. Otherwise, we add the element and its index to the HashMap. If no solution is found, we return an empty array.
 
-### [code](../src/main/java/day6_10/Day6T1TwoSum.java)
+### [code](../../src/main/java/day6_10/Day6T1TwoSum.java)
 ```java
 public int[] twoSum(int[] nums, int target){
     

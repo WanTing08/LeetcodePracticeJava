@@ -20,7 +20,7 @@ we return -1 to indicate that it is not present.
 
 Time Complexity: O(log(n))
 
-### [code](../src/main/java/day1_5/Day1T704BinarySearch.java)
+### [code](../../src/main/java/day1_5/Day1T704BinarySearch.java)
 
 ### Attention
 
@@ -48,7 +48,7 @@ will have been moved to the leftside of the array, and 'slow'
 will point the next empty position. We return 'slow' as the
 length of the new array with the target element removed.
 
-### [code](../src/main/java/day1_5/Day1T27RemoveElement.java)
+### [code](../../src/main/java/day1_5/Day1T27RemoveElement.java)
 
 
 

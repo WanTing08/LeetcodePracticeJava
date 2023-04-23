@@ -15,7 +15,7 @@ list.
 The code use a temporary variable _'newHead'_ to keep track of
 the new head of the list after the first pair is swapped.
 
-### [code](../src/main/java/day1_5/Day4T24SwapNodesInPairs.java)
+### [code](../../src/main/java/day1_5/Day4T24SwapNodesInPairs.java)
 
 ```java
 public datastructure.ListNode swapNodes(datastructure.ListNode head){
@@ -42,7 +42,7 @@ We use a **dummy node** to handle the edge case where the first node needs to be
 
 Overall, the time complexity of this solution is _**O(n)**_, where n is the length of the linked list.
 
-### [code](../src/main/java/day1_5/Day4T19RemoveNthNodeFromEndOfList.java)
+### [code](../../src/main/java/day1_5/Day4T19RemoveNthNodeFromEndOfList.java)
 
 ```java
 public static datastructure.ListNode removeNode(datastructure.ListNode head, int n){
@@ -83,7 +83,7 @@ linked lists.
 If there is a carry digit in the end of addition, we create new node
 for it and append it to the result linked list.
 
-### [code](../src/main/java/day1_5/Day4T2AddTwoNumbers.java)
+### [code](../../src/main/java/day1_5/Day4T2AddTwoNumbers.java)
 ```java
 public datastructure.ListNode addTwo(datastructure.ListNode l1, datastructure.ListNode l2){
     datastructure.ListNode dummy = new datastructure.ListNode(0);
@@ -116,7 +116,7 @@ public datastructure.ListNode addTwo(datastructure.ListNode l1, datastructure.Li
 ## Solution
 
 
-### [code](../src/main/java/day1_5/Day4T7ReverseInteger.java)
+### [code](../../src/main/java/day1_5/Day4T7ReverseInteger.java)
 
 
 # [142. Linked List Cycle II](https://leetcode.com/problems/linked-list-cycle-ii/)
@@ -135,7 +135,7 @@ of the cycle.
 
 If there is no cycle in the list, then we simply return null.
 
-### [code](../src/main/java/day1_5/Day4T142LinkedListCycleII.java)
+### [code](../../src/main/java/day1_5/Day4T142LinkedListCycleII.java)
 ```java
 public static datastructure.ListNode detectCycle(datastructure.ListNode head){
     if(head == null || head.next == null) return null;

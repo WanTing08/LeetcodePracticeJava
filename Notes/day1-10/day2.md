@@ -14,7 +14,7 @@ absolute value of the largest element either at the beginning or
 at the end of the array, so this approach ensures that we add the 
 squares of the largest element in the end of the result array.
 
-### [code](../src/main/java/day1_5/Day2T977.java)
+### [code](../../src/main/java/day1_5/Day2T977.java)
 
 ```java
 public static int[] sortedSquares(int[] nums){
@@ -50,7 +50,7 @@ the target. We repeat this process until 'right' reach the end of
 the array. At each step, we keep track of the minimum length of a 
 subarray that has a sum greater or equal to the target.
 
-### [code](../src/main/java/day1_5/Day2T209.java)
+### [code](../../src/main/java/day1_5/Day2T209.java)
 ```java
 public int minSubArrayLen(int[] nums, int target){
     int left = 0;
