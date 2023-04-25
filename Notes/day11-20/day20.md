@@ -131,4 +131,4 @@ result if we compare with int values.
 By using the long data type, we can expand the range of possible values that a node can have in the 
 binary search tree, ensuring that the function can handle all 
 possible cases of binary search trees, including cases where nodes 
-have the values of **'Integer.MAX_VALUE'** or **'Integer.MIN_VALUE'**.
+have the values of _**'Integer.MAX_VALUE'**_ or _**'Integer.MIN_VALUE'**._
