@@ -56,4 +56,30 @@ public static TreeNode mergeTree(TreeNode root1, TreeNode root2){
 }
 ```
 
-# [700. Search in a Binary Search Tree]()
+# [700. Search in a Binary Search Tree](https://leetcode.com/problems/search-in-a-binary-search-tree/)
+
+## Solution
+
+The method checks if the root node is null or if the value of the root node is equal to the value being searched for. If either of these conditions are true, the root node is returned.
+
+If the value being searched for is less than the value of the root node, then the method recursively calls itself with the left child of the root node as the new root. If the value being searched for is greater than the value of the root node, then the method recursively calls itself with the right child of the root node as the new root.
+
+If the value being searched for is not found in the tree, then null is returned.
+### [code](../../src/main/java/day16_20/Day20T700SearchInABinarySearchTree.java)
+```java
+public static TreeNode searchBT(TreeNode root, int val){
+    
+    if(root == null || root.val == val) return root;
+    
+    TreeNode result = new TreeNode();
+    
+    if(root.val > val) result = searchBT(root.left, val);
+    if(root.val < val) result = searchBT(root.right, val);
+    
+    return result;
+}
+```
+
+# [98. Validate Binary Search Tree](https://leetcode.com/problems/validate-binary-search-tree/)
+
+## Solution
