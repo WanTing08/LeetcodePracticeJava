@@ -83,3 +83,52 @@ public static TreeNode searchBT(TreeNode root, int val){
 # [98. Validate Binary Search Tree](https://leetcode.com/problems/validate-binary-search-tree/)
 
 ## Solution
+The method **'isValidBST(TreeNode root)'** is the main entry point of the 
+recursive function. It calls the **'isValidBST(TreeNode root, 
+long minVal, long maxVal)'** method and passes in the root node of the 
+binary search tree, as well as the minimum and maximum values that 
+a node in the tree can have.
+
+The method **'isValidBST(TreeNode root, long minVal, long maxVal)'** is 
+the recursive helper method that checks if the binary 
+search tree rooted at the given root node is valid within the given 
+range of **'minVal'** and **'maxVal'**.
+
+The base case of the recursion is when the root node is null, which 
+means that the tree is empty and therefore a valid binary search tree. 
+If the root node's value is less than or equal to the **'minVal'** or greater 
+than or equal to the **'maxVal'**, then the tree is not a valid binary 
+search tree, so the method returns false.
+
+Otherwise, the method recursively calls itself on the left and right 
+child nodes of the root node, passing in the updated **'minVal'** and
+**'maxVal'** values. The left child node's **'maxVal'** is updated to be 
+**'root.val'** since any node in the left subtree must be less than 
+the root node, and the right child node's **'minVal'** is updated to be 
+**'root.val'** since any node in the right subtree must be greater than 
+the root node.
+
+
+### [code](../../src/main/java/day16_20/Day20T98ValidateBinarySearchTree.java)
+```java
+public static boolean isValidBST(TreeNode root){
+    return isValidBST(root, Long.MIN_VALUE, Long.MAX_VALUE);
+}
+
+public static boolean isValidBST(TreeNode root, long minVal, long maxVal){
+    if(root == null) return true;
+    if(root.val <= minVal || root.val >= maxVal) return false;
+    return isValidBST(root.left, minVal, root.val) && isValidBST(root.right, root.val, maxVal);
+}
+```
+
+### Attention
+If a node in the valid binary search tree has the value of **_'Integer.MAX_VALUE'_** or 
+_**'Integer.MIN_VALUE'**_, then the value of the parent node must be outside
+of the range of the int data type, which causes an incorrect 
+result if we compare with int values.
+
+By using the long data type, we can expand the range of possible values that a node can have in the 
+binary search tree, ensuring that the function can handle all 
+possible cases of binary search trees, including cases where nodes 
+have the values of **'Integer.MAX_VALUE'** or **'Integer.MIN_VALUE'**.
