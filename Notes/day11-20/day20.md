@@ -40,3 +40,20 @@ private static TreeNode construct(int[] nums, int left, int right){
     return root;
 }
 ```
+
+# [617. Merge Two Binary Trees](https://leetcode.com/problems/merge-two-binary-trees/)
+
+### [code](../../src/main/java/day16_20/Day20T617MergeTwoBinaryTrees.java)
+
+```java
+public static TreeNode mergeTree(TreeNode root1, TreeNode root2){
+    if(root1 == null) return root2;
+    if(root2 == null) return root1;
+    root1.val += root2.val;
+    root1.left = mergeTree(root1.left, root2.left);
+    root2.right = mergeTree(root1.right, root2.right);
+    return root1;
+}
+```
+
+# [700. Search in a Binary Search Tree]()
