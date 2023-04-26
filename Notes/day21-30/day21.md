@@ -36,3 +36,13 @@ class Solution {
     }
 }
 ```
+# [501. Find Mode in Binary Search Tree](https://leetcode.com/problems/find-mode-in-binary-search-tree/)
+## Solution
+
+Perform an inorder traversal of the binary search tree, keeping track
+of the previous node visited, the count of current value, the maximum 
+count seen so far, and a list of node seen so far. 
+
+At each node visited, update the count and compare it with the maximum count.
+If the count is greater than the maximum count, update the modes list with the current value. If the count is equal to the maximum count, add the current value to the modes list. Finally, return the modes list as an array of integers.
+
