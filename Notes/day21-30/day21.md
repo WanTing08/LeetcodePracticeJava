@@ -91,3 +91,42 @@ public class Solution {
     }
 }
 ```
+
+# [236. Lowest Common Ancestor of a Binary Tree](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/)
+
+## Solution
+The method starts by checking if the root is null or if either p or 
+q is equal to the root. If any of these conditions is true, then the 
+root is the LCA, and we return it.
+
+Otherwise, we recursively search for the LCA in the left and right 
+subtrees of the root. We call the method again with the left child
+of the root and the nodes p and q. Similarly, we call the method with
+the right child of the root and the nodes p and q.
+
+Once we have LCA for the left and right subtrees,  we need to combine them to get the LCA for the entire tree.
+There are four cases:
+- If left and right LCA are null, then there is no common ancestor, return null
+- If the left LCA is not null and the right LCA is null, then the left LCA is the LCA for entire tree, and return it
+- If the right LCA is not null, and the left LCA is null, then the right LCA is the LCA for the entire tree, and return it.
+- Otherwise, both left and right LCA are not null, and the root is the LCA for the entire tree, so we return it.
+
+### [code](../../src/main/java/day21_30/Day21T236LowestCommonAncestorOfABinaryTree.java)
+
+```java
+public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q){
+
+    if(root == p || root == q || root == null) return root; // recursive end condition
+
+    // postorder traversal
+    TreeNode left = lowestCommonAncestor(root.left, p ,q);
+    TreeNode right = lowestCommonAncestor(root.right, p ,q);
+
+    if(left == null && right == null) return null;       // if we didn't find the p and q
+    else if(left != null && right == null) return left;  // if we only find one node
+    else if(left == null && right != null) return right; // if we only find one node
+    else return root;                                    // if we find both nodes
+}
+```
+
+
