@@ -46,3 +46,48 @@ count seen so far, and a list of node seen so far.
 At each node visited, update the count and compare it with the maximum count.
 If the count is greater than the maximum count, update the modes list with the current value. If the count is equal to the maximum count, add the current value to the modes list. Finally, return the modes list as an array of integers.
 
+### [code](../../src/main/java/day21_30/Day21T501FindModeInBinarySearchTree.java)
+```java
+public class Solution {
+    private int preVal;
+    private int count;
+    private int maxCount;
+    private List<Integer> modes;
+
+    public int[] findMode(TreeNode root) {
+        preVal = 0;
+        count = 0;
+        maxCount = 0;
+        modes = new ArrayList<>();
+
+        inorder(root);
+
+        int[] result = new int[modes.size()];
+        for (int i = 0; i < modes.size(); i++) {
+            result[i] = modes.get(i);
+        }
+        return result;
+    }
+
+    public void inorder(TreeNode node) {
+        if (node == null) return;
+
+        inorder(node.left);
+
+        if (node.val == preVal) {
+            count++;
+        } else count = 1;
+
+        if (count > maxCount) {
+            maxCount = count;
+            modes.clear();
+            modes.add(node.val);
+        } else if (count == maxCount) {
+            modes.add(node.val);
+        }
+        preVal = node.val;
+
+        inorder(node.right);
+    }
+}
+```

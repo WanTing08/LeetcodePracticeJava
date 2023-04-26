@@ -2,6 +2,8 @@ package day21_30;
 
 import datastructure.TreeNode;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /*
@@ -26,8 +28,51 @@ public class Day21T501FindModeInBinarySearchTree {
     private int preVal;
     private int count;
     private int maxCount;
-    private List<Integer> mode;
-    public int findMode(TreeNode root){
+    private List<Integer> modes;
+    public int[] findMode(TreeNode root){
+        preVal = 0;
+        count = 0;
+        maxCount = 0;
+        modes = new ArrayList<>();
 
+        inorder(root);
+
+        int[] result = new int[modes.size()];
+        for (int i = 0; i < modes.size(); i++) {
+            result[i] = modes.get(i);
+        }
+        return result;
     }
+
+    public void inorder(TreeNode node){
+        if(node == null) return;
+
+        inorder(node.left);
+
+        if(node.val == preVal){
+            count++;
+        }else count = 1;
+
+        if(count > maxCount){
+            maxCount = count;
+            modes.clear();
+            modes.add(node.val);
+        } else if (count == maxCount) {
+            modes.add(node.val);
+        }
+        preVal = node.val;
+
+        inorder(node.right);
+    }
+
+    public static void main(String[] args) {
+        TreeNode root = new TreeNode(1);
+        root.right = new TreeNode(2);
+        root.right.left = new TreeNode(2);
+
+        Day21T501FindModeInBinarySearchTree solution = new Day21T501FindModeInBinarySearchTree();
+        int[] res = solution.findMode(root);
+        System.out.println(Arrays.toString(res));
+    }
+
 }
