@@ -53,7 +53,35 @@ public static TreeNode insertIntoBST(TreeNode root, int val){
 # [450. Delete Node in a BST](https://leetcode.com/problems/delete-node-in-a-bst/)
 
 ## Solution
+We use a recursive approach to traverse the tree and find the node with the given key. 
 
+If the key is less than the current node's value, we traverse to the left subtree, else we traverse to the right subtree. 
+
+If we find the node with the key, we check if it has one child or two children. If it has one child, we return the non-null child. If it has two children, we find the minimum node in the right subtree, replace the value of the current node with the minimum node's value, and then delete the minimum node from the right subtree recursively. 
+Finally, we return the root node.
+
+### [code]()
+```java
+public TreeNode deleteNode(TreeNode root, int key){
+    if(root == null) return root;
+    if(root.val == key){
+        if(root.left == null) return root.right;
+        else if(root.right == null) return root.left;
+        else{
+            TreeNode curr = root.right;
+            while(curr.left != null){
+                curr = curr.left;
+            }
+            curr.left = root.left;
+            root = root.left;
+            return root;
+        }
+    }
+    if(root.val > key) root.left = deleteNode(root.left, key);
+    if(root.val < key) root.right = deleteNode(root.right, key);
+    return root;
+}
+```
 
 
 
