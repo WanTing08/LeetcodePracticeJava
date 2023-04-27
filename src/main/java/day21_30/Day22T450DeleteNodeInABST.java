@@ -12,25 +12,28 @@ import datastructure.TreeNode;
     If the node is found, delete the node.
  */
 public class Day22T450DeleteNodeInABST {
-    public static TreeNode deleteNode(TreeNode root, int key){
-        if(root == null) return root;
-        if(root.val == key){
-            if(root.left == null) return root.right;
-            else if(root.right == null) return root.left;
-            else{
-                TreeNode curr = root.right;
-                while(curr.left != null){
-                    curr = curr.left;
+    public static TreeNode deleteNode(TreeNode root, int key) {
+        if (root == null) return root;
+        if (root.val == key) {
+            if (root.left == null) {
+                return root.right;
+            } else if (root.right == null) {
+                return root.left;
+            } else {
+                TreeNode cur = root.right;
+                while (cur.left != null) {
+                    cur = cur.left;
                 }
-                curr.left = root.left;
-                root = root.left;
+                cur.left = root.left;
+                root = root.right;
                 return root;
             }
         }
-        if(root.val > key) root.left = deleteNode(root.left, key);
-        if(root.val < key) root.right = deleteNode(root.right, key);
+        if (root.val > key) root.left = deleteNode(root.left, key);
+        if (root.val < key) root.right = deleteNode(root.right, key);
         return root;
     }
+
 
     public static void main(String[] args) {
         TreeNode root = new TreeNode(1);
