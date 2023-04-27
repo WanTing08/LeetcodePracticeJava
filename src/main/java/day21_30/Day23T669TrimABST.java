@@ -23,8 +23,8 @@ public class Day23T669TrimABST {
         if(root.val > high){
             return trimBST(root.left, low, high);
         }
-        root = trimBST(root.left, low, high);
-        root = trimBST(root.right, low, high);
+        root.left = trimBST(root.left, low, high);
+        root.right = trimBST(root.right, low, high);
         return root;
     }
     public static void main(String[] args) {
