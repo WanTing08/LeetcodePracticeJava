@@ -24,3 +24,28 @@ public TreeNode lowestCommonAncestorBST(TreeNode root, TreeNode p, TreeNode q){
 }
 ```
 
+# [701. Insert into a Binary Search Tree](https://leetcode.com/problems/insert-into-a-binary-search-tree/)
+## Solution
+If the **'root'** is null, then the method creates a new TreeNode with **'val'** and returns it.
+
+If the **'root'** is not null, then the method checks whether **'val'** is less than or greater than the value of the **'root'** node. 
+
+If **'val'** is less than the value of the **'root'** node, then the method recursively calls itself with **'root.left'** as 
+the new **'root'** and **'val'** as the new value to insert. If **'val'** is greater than the value of the **'root'** node, 
+then the method recursively calls itself with **'root.right'** as the new **'root'** and **'val'** as the new value to insert.
+
+Once the correct position for the new node is found, the method returns the modified root node with the new node inserted.
+### [code](../../src/main/java/day21_30/Day22T701InsertIntoABST.java)
+```java
+public static TreeNode insertIntoBST(TreeNode root, int val){
+
+    if(root == null){
+        TreeNode node = new TreeNode(val);
+        return node;
+    }
+
+    if(root.val > val) root.left = insertIntoBST(root.left, val);
+    if(root.val < val) root.right = insertIntoBST(root.right, val);
+    return root;
+}
+```

@@ -11,4 +11,9 @@ public class TreeNode {
         this.left = left;
         this.right = right;
     }
+    public String toString(){
+        StringBuilder sb = new StringBuilder("Tree: ");
+        sb.append(this.val);
+        return sb.toString();
+    }
 }
