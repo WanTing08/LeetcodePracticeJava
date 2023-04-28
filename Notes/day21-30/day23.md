@@ -53,3 +53,29 @@ public static TreeNode traverse(int[] nums, int left, int right){
 # [538. Convert BST to Greater Tree](https://leetcode.com/problems/convert-bst-to-greater-tree/)
 
 ## Solution
+The idea to solve this problem is to traverse the BST in reverse order,
+i.e., right subtree, current node, and then left subtree. While traversing,
+we maintain a running sum of all nodes visited so far, and update the 
+current node's value to the new sum.
+
+### [code](../../src/main/java/day21_30/Day23T538ConvertBSTtoGreaterTree.java)
+```java
+public class Solution {
+    
+    private int pre;
+
+    public TreeNode greaterTree(TreeNode root) {
+        pre = 0;
+        traverse(root);
+        return root;
+    }
+
+    private void traverse(TreeNode curr) {
+        if (curr == null) return;
+        traverse(curr.right);
+        curr.val += pre;
+        pre = curr.val;
+        traverse(curr.left);
+    }
+}
+```
