@@ -31,3 +31,25 @@ public TreeNode trimBST(TreeNode root, int low, int high){
 # [108. Convert Sorted Array to Binary Search Tree](https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/)
  
 ## Solution
+The approach to solve this problem is to recursively divide the array in half to construct the left and right subtrees of the root node. The middle element of the array is chosen as the root of the subtree, and then we construct the left subtree using the left half of the array and the right subtree using the right half of the array.
+
+### [code](../../src/main/java/day21_30/Day23T108ConvertSortedArrayToBST.java)
+```java
+public static TreeNode convertToBST(int[] nums){
+    TreeNode root = traverse(nums, 0, nums.length - 1);
+    return root;
+}
+
+public static TreeNode traverse(int[] nums, int left, int right){
+    if(left > right) return null;
+    int mid = left + ((right - left) >> 1);
+    TreeNode root = new TreeNode(nums[mid]);
+    root.left = traverse(nums, left, mid - 1);
+    root.right = traverse(nums, mid + 1, right);
+    return root;
+}
+```
+
+# [538. Convert BST to Greater Tree](https://leetcode.com/problems/convert-bst-to-greater-tree/)
+
+## Solution
